@@ -1,0 +1,954 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    background: rgba(0, 0, 0, 0.90);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar-brand span {
+    color: #ff3c00;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff3c00 !important;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 100px 20px;
+
+    background: #050505;
+}
+
+
+/* VIDEO */
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    filter:
+        brightness(.72) contrast(1.12) saturate(1.18);
+
+    transform: scale(1.02);
+}
+
+
+/* OVERLAY */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, .86) 0%,
+            rgba(0, 0, 0, .42) 45%,
+            rgba(0, 0, 0, .78) 100%),
+
+        linear-gradient(180deg,
+            rgba(0, 0, 0, .18) 0%,
+            rgba(0, 0, 0, .28) 52%,
+            rgba(0, 0, 0, .94) 100%);
+
+    pointer-events: none;
+}
+
+
+/* NEON GLOW */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    right: -220px;
+    top: 10%;
+
+    z-index: 1;
+
+    border-radius: 50%;
+
+    background: rgba(255, 60, 0, .13);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    animation: heroReveal 1.15s ease-out both;
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    line-height: .95;
+
+    text-shadow:
+        0 0 10px rgba(255, 60, 0, .75),
+        0 0 30px rgba(255, 60, 0, .45),
+        0 8px 35px rgba(0, 0, 0, .95);
+}
+
+
+/* HERO TITLE ORANGE */
+
+.hero h1 span {
+    color: #ff3c00;
+
+    display: inline-block;
+
+    text-shadow:
+        0 0 8px rgba(255, 60, 0, .95),
+        0 0 25px rgba(255, 60, 0, .75),
+        0 0 55px rgba(255, 60, 0, .4);
+
+    animation:
+        neonPulse 2.8s ease-in-out infinite;
+}
+
+
+/* HERO PARAGRAPH */
+
+.hero p {
+    font-size: clamp(16px, 2vw, 21px);
+
+    color: #eee;
+
+    margin-top: 25px;
+
+    text-shadow:
+        0 3px 18px rgba(0, 0, 0, .95);
+
+    animation:
+        fadeUp 1s .3s ease-out both;
+}
+
+
+/* BUTTON ANIMATION */
+
+.hero .btn-custom {
+    animation:
+        fadeUp 1s .5s ease-out both;
+
+    box-shadow:
+        0 0 15px rgba(255, 60, 0, .45),
+        0 0 40px rgba(255, 60, 0, .18);
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes neonPulse {
+
+    0%,
+    100% {
+
+        filter: brightness(1);
+
+        text-shadow:
+            0 0 8px rgba(255, 60, 0, .95),
+            0 0 25px rgba(255, 60, 0, .7),
+            0 0 55px rgba(255, 60, 0, .35);
+    }
+
+
+    50% {
+
+        filter: brightness(1.15);
+
+        text-shadow:
+            0 0 12px rgba(255, 60, 0, 1),
+            0 0 35px rgba(255, 60, 0, .9),
+            0 0 70px rgba(255, 60, 0, .5);
+    }
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn-custom {
+
+    background: #ff3c00;
+
+    border: none;
+
+    color: white;
+
+    padding: 13px 30px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-custom:hover {
+
+    background: #ff5a2a;
+
+    transform: scale(1.05);
+
+    color: white;
+
+    box-shadow:
+        0 0 20px rgba(255, 60, 0, 0.6);
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+
+    font-size: 40px;
+
+    font-weight: bold;
+}
+
+.section-title h2 span {
+
+    color: #ff3c00;
+}
+
+.section-title p {
+
+    color: #999;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.custom-card {
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    padding: 35px 25px;
+
+    height: 100%;
+
+    transition: 0.4s;
+}
+
+
+.custom-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color: #ff3c00;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ICON */
+
+.icon {
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ff3c00;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+.custom-card h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+
+.custom-card p {
+
+    color: #aaa;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   NEON DETAILS
+========================================= */
+
+.custom-card,
+.feature-box {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.custom-card::before,
+.feature-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 70%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #ff3c00,
+            transparent);
+
+    box-shadow:
+        0 0 16px rgba(255, 60, 0, .85);
+
+    transition:
+        left .75s ease;
+}
+
+
+.custom-card:hover::before,
+.feature-box:hover::before {
+
+    left: 130%;
+}
+
+
+/* =========================================
+   FEATURE
+========================================= */
+
+.feature-section {
+
+    background: #111;
+}
+
+
+.feature-box {
+
+    background: #181818;
+
+    border-radius: 20px;
+
+    padding: 50px;
+
+    border: 1px solid #292929;
+}
+
+
+.feature-box h2 {
+
+    font-size: 40px;
+
+    font-weight: bold;
+}
+
+
+.feature-box h2 span {
+
+    color: #ff3c00;
+}
+
+
+.feature-box p {
+
+    color: #aaa;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BIODATA
+========================================= */
+
+.biodata-section {
+
+    padding: 90px 0;
+
+    background: #0b0b0b;
+}
+
+
+.biodata-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 20px;
+
+    padding: 50px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* GARIS NEON */
+
+.biodata-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 70%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #ff3c00,
+            transparent);
+
+    box-shadow:
+        0 0 16px rgba(255, 60, 0, .85);
+
+    transition: left .75s ease;
+}
+
+
+.biodata-box:hover::before {
+
+    left: 130%;
+}
+
+
+/* FOTO */
+
+.biodata-photo {
+
+    flex: 0 0 280px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.profile-photo {
+
+    width: 260px;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    border: 3px solid #ff3c00;
+
+    box-shadow:
+        0 0 20px rgba(255, 60, 0, .35);
+
+    display: block;
+}
+
+
+/* CONTENT */
+
+.biodata-content {
+
+    flex: 1;
+}
+
+
+.biodata-title {
+
+    color: #ff3c00;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.biodata-content h2 {
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+.biodata-content h2 span {
+
+    color: #ff3c00;
+}
+
+
+.biodata-description {
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* DATA */
+
+.biodata-data {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.data-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.data-row span {
+
+    color: #999;
+}
+
+
+.data-row strong {
+
+    color: white;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats {
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.stats h3 {
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    color: #ff3c00;
+}
+
+
+.stats p {
+
+    color: #aaa;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    background: #050505;
+
+    padding: 40px 0;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+}
+
+
+footer h3 {
+
+    font-weight: bold;
+}
+
+
+footer span {
+
+    color: #ff3c00;
+}
+
+
+footer p {
+
+    color: #777;
+}
+
+
+/* =========================================
+   SOCIAL ICON
+========================================= */
+
+.social-icons a {
+
+    display: inline-flex;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #181818;
+
+    color: white;
+
+    border-radius: 50%;
+
+    margin: 5px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.social-icons a:hover {
+
+    background: #ff3c00;
+
+    transform:
+        translateY(-5px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-video {
+
+        object-position: 55% center;
+    }
+
+
+    .hero::before {
+
+        background:
+            linear-gradient(rgba(0, 0, 0, .52),
+                rgba(0, 0, 0, .86)),
+
+            linear-gradient(180deg,
+                rgba(0, 0, 0, .1),
+                rgba(0, 0, 0, .85));
+    }
+
+
+    .biodata-box {
+
+        flex-direction: column;
+
+        gap: 35px;
+
+        padding: 30px;
+    }
+
+
+    .biodata-photo {
+
+        flex: none;
+    }
+
+
+    .profile-photo {
+
+        width: 220px;
+
+        height: 280px;
+    }
+
+
+    .biodata-content {
+
+        width: 100%;
+    }
+
+
+    .biodata-content h2 {
+
+        font-size: 32px;
+    }
+
+
+    .data-row {
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .data-row strong {
+
+        text-align: left;
+    }
+
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-content,
+    .hero h1 span,
+    .hero p,
+    .hero .btn-custom {
+
+        animation: none;
+    }
+
+/* =========================================
+   ABOUT / SKILL CARD
+========================================= */
+
+.skill-card {
+    background: #151515;
+    border: 1px solid #2d2d2d;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 50%;
+    padding-bottom: 25px;
+}
+
+
+/* GAMBAR JPG */
+
+.skill-image {
+    width: 50%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ICON */
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+
+    background: #ff3d00;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px 24px 18px;
+
+    color: white;
+    font-size: 25px;
+}
+
+
+/* JUDUL */
+
+.skill-card h3 {
+    color: white;
+    font-size: 20px;
+
+    margin: 0 24px 14px;
+}
+
+
+/* DESKRIPSI */
+
+.skill-card p {
+    color: #bdbdbd;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin: 0 24px;
+}
+}
