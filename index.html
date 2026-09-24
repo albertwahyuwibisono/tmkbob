@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <title>My Modern Website</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- CSS SENDIRI -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="container">
+
+      <a class="navbar-brand" href="#">
+        MY<span>WEBSITE</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Skills</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#biodata">Biodata</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero" id="home">
+
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+
+      <source src="car-cinematic.mp4" type="video/mp4">
+
+      Browser Anda tidak mendukung video HTML5.
+
+    </video>
+
+    <div class="hero-content">
+
+      <h1>
+        Welcome To
+        <span>My Profile</span>
+      </h1>
+
+      <a href="#about" class="btn btn-custom mt-3">
+        Explore My Skills
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section class="section" id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>
+          about <span>Us</span>
+        </h2>
+
+        <p>Mechatronics Skills</p>
+      </div>
+
+
+      <div class="row g-4">
+
+        <!-- CARD 1 -->
+        <div class="col-md-4">
+
+          <div class="skill-card">
+
+            <!-- GAMBAR JPG -->
+            <img src="electrical-design.jpg" alt="Electrical Design" class="skill-image" style="height: 250px;">
+
+            <h3>Electrical Design</h3>
+
+            <p>
+              adalah proses perencanaan, perancangan, dan
+              pembuatan model sistem atau komponen
+              kelistrikan yang aman, efisien, serta sesuai dengan
+              standar teknik.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="col-md-4">
+
+          <div class="skill-card">
+
+            <!-- GAMBAR JPG -->
+            <img src="electrical-wiring.jpeg" alt="Electrical Wiring" class="skill-image" style="height: 250px;">
+
+            <h3>Electrical Wiring</h3>
+
+            <p>
+              jaringan terstruktur dari kabel, konduktor, dan
+              perangkat pelindung yang dirancang untuk
+              mendistribusikan energi listrik secara aman dari
+              sumber daya utama ke berbagai titik beban.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="col-md-4">
+
+          <div class="skill-card">
+
+            <!-- GAMBAR JPG -->
+            <img src="plc-automation.jpeg" alt="PLC & Automation" class="skill-image" style="height: 250px;">
+
+            </div>
+
+            <h3>PLC & Automation</h3>
+
+            <p>
+              teknologi sistem kendali industri di mana PLC
+              berfungsi sebagai otak komputer mikro yang
+              memproses sinyal dari sensor untuk
+              menggerakkan mesin secara mandiri.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BIODATA
+  ========================= -->
+
+  <section class="biodata-section" id="biodata">
+
+    <div class="container">
+
+      <div class="biodata-box">
+
+        <!-- FOTO -->
+
+        <div class="biodata-photo">
+
+          <img src="albert.jpeg" class="profile-photo" alt="Foto Albert">
+
+        </div>
+
+
+        <!-- DATA DIRI -->
+
+        <div class="biodata-content">
+
+          <p class="biodata-title">
+            ABOUT ME
+          </p>
+
+          <h2>
+            BIODATA <span>DIRI</span>
+          </h2>
+
+          <p class="biodata-description">
+            Halo, perkenalkan nama saya Albert Wahyu.
+            Saya adalah mahasiswa yang sedang belajar
+            dan mengembangkan kemampuan di bidang teknologi.
+          </p>
+
+
+          <div class="biodata-data">
+
+            <div class="data-row">
+              <span>Nama</span>
+              <strong>Albert Wahyu Wibisono</strong>
+            </div>
+
+            <div class="data-row">
+              <span>NIM</span>
+              <strong>20242002</strong>
+            </div>
+
+            <div class="data-row">
+              <span>Tempat, Tanggal Lahir</span>
+              <strong>Sukoharjo, 9 Juli 2005 </strong>
+            </div>
+
+            <div class="data-row">
+              <span>Jenis Kelamin</span>
+              <strong>Laki-laki</strong>
+            </div>
+
+            <div class="data-row">
+              <span>Program Studi</span>
+              <strong>Mechatronics</strong>
+            </div>
+
+            <div class="data-row">
+              <span>University</span>
+              <strong>Politeknik Atmi Surakarta</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="section" id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Contact <span>Us</span>
+        </h2>
+
+        <p>
+          Hubungi kami melalui media sosial
+        </p>
+
+      </div>
+
+
+      <div class="text-center social-icons">
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alberrwahyuwibisono89@gmail.com" target="_blank"">
+          <i class=" bi bi-envelope-fill""></i>
+        </a>
+
+        <a href=" https://www.instagram.com/albertwahyuu_/" target="_blank">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <h3>
+        MY<span>WEBSITE</span>
+      </h3>
+
+      <p>
+        © 2026 My Website. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Bootstrap JavaScript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
